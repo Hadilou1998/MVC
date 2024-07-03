@@ -9,7 +9,7 @@ export default class extends BaseSchema {
       table.string('title', 80).notNullable()
       table.text('description')
       table.dateTime('date')
-      table.boolean('is_online')
+      table.boolean('is_on_line')
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })

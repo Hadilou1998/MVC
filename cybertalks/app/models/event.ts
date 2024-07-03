@@ -11,10 +11,10 @@ export default class Event extends BaseModel {
   declare title: string
 
   @column()
-  declare description: string | null
+  declare description: string
 
   @column()
-  declare isOnline: boolean
+  declare isOnLine: boolean
 
   @column.dateTime()
   declare date: DateTime
@@ -24,6 +24,7 @@ export default class Event extends BaseModel {
     pivotForeignKey: 'event_id',
     relatedKey: 'id',
     pivotRelatedForeignKey: 'speaker_id',
+    pivotTable: 'events_speakers'
   })
   declare speakers: ManyToMany<typeof Speaker>
 

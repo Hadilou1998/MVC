@@ -6,7 +6,7 @@ export const SpeakerFactory = factory
     return {
       name: faker.person.fullName(),
       speciality: faker.lorem.word(),
-      exp: faker.datatype.number({ min: 4, max: 10 }),
+      exp: faker.number.int({ min: 4, max: 10 }),
       country: faker.location.country(),
     }
   })
