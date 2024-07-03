@@ -1,3 +1,9 @@
 // import type { HttpContext } from '@adonisjs/core/http'
 
-export default class EventsController {}
+import { HttpContext } from "@adonisjs/core/http";
+
+export default class EventsController {
+    async eventShow({ view }: HttpContext) {
+        return view.render('pages/event')
+    }
+}
