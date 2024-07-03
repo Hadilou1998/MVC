@@ -1,6 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class EventsController {
+    
     async eventShow({ view }: HttpContext) {
         return view.render('pages/event', {
             'title': 'Tous les évenements Cybertalks',
@@ -13,4 +14,5 @@ export default class EventsController {
             ],
         })
     }
+    
 }
