@@ -12,6 +12,9 @@ export default class Event extends BaseModel {
   declare description: string | null
 
   @column()
+  declare isOnline: boolean
+
+  @column.dateTime()
   declare date: DateTime
 
   @column.dateTime({ autoCreate: true })
