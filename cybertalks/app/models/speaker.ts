@@ -1,18 +1,21 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 
-export default class Event extends BaseModel {
+export default class Speaker extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
   @column()
-  declare title: string
+  declare name: string
 
   @column()
-  declare description: string | null
+  declare speciality: string
 
   @column()
-  declare date: DateTime
+  declare exp: number
+
+  @column()
+  declare country: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
