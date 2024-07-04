@@ -159,7 +159,6 @@ router.get('/speakers', [SpeakersController, 'index']).as('speakers')
 
 
 
-                                                                                                                          const Coucou = 'Je suis du code malveillant tou en bas de la page tu ne mevois pas :)'
 
 
 
