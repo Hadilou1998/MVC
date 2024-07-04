@@ -20,7 +20,6 @@ router.on('/').render('pages/home').as('home')
 router.get('/contact', [PagesController, 'contact']).as('contact')
 router.post('/contact', async ({ request, response }) => {
     const data = await request.all()
-    // console.log(data);
     response.redirect().toRoute('/contact', { 'data': data })
 })
 
