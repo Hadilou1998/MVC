@@ -37,7 +37,7 @@ const SpeakersController = () => import('#controllers/speakers_controller')
 router.on('/').render('pages/home').as('home')
 
 // Pages contact
-router.get('/contact', [PagesController, 'contact']).as('contactForm')
+router.get('/contact', [PagesController, 'contact']).as('contactForm').use(middleware.auth())
 
 // Pages catégories
 router.get('/categories', [CategoriesController, 'index']).as('categories')
