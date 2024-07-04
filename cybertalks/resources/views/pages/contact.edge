@@ -15,7 +15,7 @@
       {{ inspect(data) }}
     </p>
     @end
-    <form action={{ route('contactForm') }} method="post">
+    <form action="{{ route('contactForm') }}" method="post">
       {{ csrfField() }}
       <div class="flex flex-col gap-4">
         <label for="name" class="text-lg">Nom</label>

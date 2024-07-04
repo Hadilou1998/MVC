@@ -25,9 +25,27 @@ router.get('/contact', [PagesController, 'contact']).as('contact')
 router.get('/categories', [CategoriesController, 'index']).as('categories')
 router.on('/categories/:id').render('pages/category').as('category')
 
-
 // Pages speakers
 router.get('/speakers', [SpeakersController, 'index']).as('speakers')
 router.get('/speakers/new', [SpeakersController, 'create'])
 .as('speakerCreate')
 router.post('/speakers/new', [SpeakersController, 'create']).as('speakerNew')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Pages évènements
+// router.get('/events/:slug', [EventsController, 'show']).as('event')
+// router.get('/event/', [EventsController, 'index']).as('events')

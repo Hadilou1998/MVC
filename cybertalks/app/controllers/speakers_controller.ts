@@ -12,7 +12,7 @@ export default class SpeakersController {
     })
   }
 
-  async create({ request, response }: HttpContext) {
+  async create({ request, response}: HttpContext) {
     if (request.method() ==='POST') {
       const data = await request.body()
       console.log(data)
