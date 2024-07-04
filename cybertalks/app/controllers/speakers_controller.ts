@@ -14,14 +14,15 @@ export default class SpeakersController {
 
   async create({ request, response }: HttpContext) {
     const data = await request.body()
-    const speaker = await Speaker.create({
+    console.log(data)
+    /*const speaker = await Speaker.create({
       name: data.name,
       speciality: data.speciality,
       exp: data.exp,
       country: data.country
-    })
+    })*/
 
-    return response.ctx?.render('pages/speakers_new', {
+    return response.ctx?.view.render('pages/speakers_new', {
 
     })
   }
