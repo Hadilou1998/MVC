@@ -15,7 +15,6 @@ export default class SpeakersController {
   async create({ request, response}: HttpContext) {
     if (request.method() ==='POST') {
       const data = await request.body()
-      console.log(data)
       const speaker = await Speaker.create({
         name: data.name,
         speciality: data.speciality,
@@ -23,6 +22,7 @@ export default class SpeakersController {
         country: data.country,
       })
 
+      console.log(speaker)
       return response.ctx?.view.render('pages/speakers_new', {
         'message': 'Création d\'un nouveau speaker réussie',
       })
