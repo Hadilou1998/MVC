@@ -18,12 +18,9 @@ router.on('/').render('pages/home').as('home')
 
 // Pages contact
 router.get('/contact', [PagesController, 'contact']).as('contact')
-router.post('/contact', async ({ request, view }) => {
+router.post('/contact', async ({ request, response }) => {
     const data = await request.all()
-    return view.render('pages/contact', {
-        pageTitle: 'Nous Contacter',
-        data: data,
-    })
+    response.redirect().toRoute('/contact', { 'data': data })
 })
 
 // Pages catégories
