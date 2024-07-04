@@ -7,11 +7,11 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.string('title', 80).notNullable()
-      table.string('slug', 80).notNullable()
+      table.string('slug', 80)
       table.text('description')
       table.dateTime('date')
       table.integer('category_id').unsigned().references('categories.id')
-      table.boolean('is_online')
+      table.boolean('is_on_line')
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })

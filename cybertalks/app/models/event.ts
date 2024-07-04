@@ -12,13 +12,13 @@ export default class Event extends BaseModel {
   declare title: string
 
   @column()
-  declare slug: string
+  declare slug: string | null
 
   @column()
   declare description: string | null
 
   @column()
-  declare isOnline: boolean
+  declare isOnLine: boolean
 
   @column.dateTime()
   declare date: DateTime

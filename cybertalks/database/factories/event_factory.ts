@@ -8,7 +8,7 @@ export const EventFactory = factory
     return {
       title: faker.lorem.sentence(),
       description: faker.lorem.paragraphs(),
-      isOnline: faker.datatype.boolean(),
+      isOnLine: faker.datatype.boolean(),
       date: DateTime.now(),
     }
   })
