@@ -1,5 +1,6 @@
 import factory from '@adonisjs/lucid/factories'
 import Category from '#models/category'
+import { EventFactory } from './event_factory.js'
 
 export const CategoryFactory = factory
   .define(Category, async ({ faker }) => {
@@ -9,4 +10,5 @@ export const CategoryFactory = factory
       'slug': faker.helpers.slugify(name),
     }
   })
+  .relation('events', () => EventFactory)
   .build()
