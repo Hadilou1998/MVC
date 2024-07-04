@@ -17,7 +17,6 @@ export default class Speaker extends BaseModel {
   @column()
   declare country: string
 
-  // Pivot table
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 

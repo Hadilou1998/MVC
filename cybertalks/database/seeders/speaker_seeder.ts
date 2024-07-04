@@ -3,6 +3,7 @@ import { BaseSeeder } from '@adonisjs/lucid/seeders'
 
 export default class extends BaseSeeder {
   async run() {
-    await SpeakerFactory.createMany(20)
+    // Write your database queries inside the run method
+    await SpeakerFactory.createMany(30)
   }
 }

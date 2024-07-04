@@ -1,0 +1,14 @@
+<nav class="flex justify-between items-center w-full p-5">
+  @include('components/partials/logo')
+  <div class="flex gap-2">
+    <a href={{ route('categories') }} class="hover:scale-95 transition-all duration-300 ease-in-out hover:text-amber-500">
+      @include('components/partials/calendarIcon')
+    </a>
+    <a href={{ route('speakers') }} class="hover:scale-95 transition-all duration-300 ease-in-out hover:text-amber-500">
+      @include('components/partials/speakerIcon')
+    </a>
+    <a href={{ route('contact') }} class="hover:scale-95 transition-all duration-300 ease-in-out hover:text-amber-500">
+      @include('components/partials/contactIcon')
+    </a>
+  </div>
+</nav>

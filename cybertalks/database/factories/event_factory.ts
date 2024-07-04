@@ -7,8 +7,8 @@ export const EventFactory = factory
   .define(Event, async ({ faker }) => {
     return {
       title: faker.lorem.sentence(),
-      description: faker.lorem.paragraphs(4),
-      isOnLine: faker.datatype.boolean(50),
+      description: faker.lorem.paragraphs(),
+      isOnline: faker.datatype.boolean(),
       date: DateTime.now(),
     }
   })
