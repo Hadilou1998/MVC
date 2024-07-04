@@ -12,7 +12,7 @@ export default class SpeakersController {
     })
   }
 
-  async create({ request, response }: HttpContext, request: Request) {
+  async create({ request, response }: HttpContext) {
     const data = await request.body()
     const speaker = await Speaker.create({
       name: data.name,
@@ -21,7 +21,7 @@ export default class SpeakersController {
       country: data.country
     })
 
-    return response.send.view('pages/speakers_new', {
+    return response.ctx?.render('pages/speakers_new', {
 
     })
   }

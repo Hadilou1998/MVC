@@ -2,12 +2,12 @@ layout.mail()
 
 @slot('mail')
 
-<form action="" method="post">
+<form action="" method="post" class="flex flex-col gap-5">
     {{ csrfField() }}
-    <input type="text" name="name">
-    <input type="text" name="speciality">
-    <input type="number" name="exp">
-    <input type="text" name="country">
+    <input type="text" name="name" placeholder="Martin">
+    <input type="text" name="speciality" placeholder="Tech Lead">
+    <input type="number" name="exp" placeholder="10">
+    <input type="text" name="country" placeholder="France">
     <button type="submit">Créer</button>
 </form>
 
