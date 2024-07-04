@@ -14,37 +14,18 @@ const PagesController = () => import('#controllers/pages_controller')
 const CategoriesController = () => import('#controllers/categories_controller')
 const SpeakersController = () => import('#controllers/speakers_controller')
 
-/*router.group(() => {
-    // Pages principales
-    router.on('/').render('pages/home').as('home')
-
-    // Pages contact
-    router.get('/contact', [PagesController, 'contact']).as('contactForm')
-    router.use(middleware.guest())
-
-    // Pages catégories
-    router.get('/categories', [CategoriesController, 'index']).as('categories')
-    router.on('/categories/:id').render('pages/category').as('category')
-
-    // Pages speakers
-    router.get('/speakers', [SpeakersController, 'index']).as('speakers')
-    router.get('/speakers/new', [SpeakersController, 'create'])
-    .as('speakerCreate')
-    router.post('/speakers/new', [SpeakersController, 'create']).as('speakerNew')
-})*/
-
 // Pages principales
 router.on('/').render('pages/home').as('home')
 
 // Pages contact
-router.get('/contact', [PagesController, 'contact']).as('contactForm').use(middleware.auth())
+router.get('/contact', [PagesController, 'contact']).as('contactForm').use(middleware.guest())
 
 // Pages catégories
-router.get('/categories', [CategoriesController, 'index']).as('categories')
+router.get('/categories', [CategoriesController, 'index']).as('categories').use(middleware.guest())
 router.on('/categories/:id').render('pages/category').as('category')
 
 // Pages speakers
-router.get('/speakers', [SpeakersController, 'index']).as('speakers')
+router.get('/speakers', [SpeakersController, 'index']).as('speakers').use(middleware.guest())
 router.get('/speakers/new', [SpeakersController, 'create']).as('speakerCreate')
 router.post('/speakers/new', [SpeakersController, 'create']).as('speakerNew')
 
