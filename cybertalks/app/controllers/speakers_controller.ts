@@ -22,8 +22,6 @@ export default class SpeakersController {
       country: data.country
     })*/
 
-    return response.ctx?.view.render('pages/speakers_new', {
-
-    })
+    return response.ctx?.view.render('pages/speakers_new')
   }
 }
