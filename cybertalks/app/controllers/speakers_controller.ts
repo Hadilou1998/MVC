@@ -12,7 +12,7 @@ export default class SpeakersController {
     })
   }
 
-  async create({ request, response}: HttpContext) {
+  async create({ request, response }: HttpContext) {
     if (request.method() ==='POST') {
       const data = await request.body()
       console.log(data)
@@ -23,11 +23,11 @@ export default class SpeakersController {
         country: data.country,
       })
 
-      return response.ctx?.view.render('pages/speakers-new', {
+      return response.ctx?.view.render('pages/speakers_new', {
         'message': 'Création d\'un nouveau speaker réussie',
       })
     }
 
-    return response.ctx?.view.render('pages/speakers-new')
+    return response.ctx?.view.render('pages/speakers_new')
   }
 }
