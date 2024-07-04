@@ -20,8 +20,9 @@ router.on('/').render('pages/home').as('home')
 router.get('/contact', [PagesController, 'contact']).as('contact')
 router.post('/contact', async ({ request, response }) => {
     const data = await request.all()
-    response.redirect().toRoute('/contact', { 'data': data })
-})
+    // console.log(data)
+    response.redirect().toRoute('contact', { 'data': data })
+}).as('contactForm')
 
 // Pages catégories
 router.get('/categories', [CategoriesController, 'index']).as('categories')
@@ -29,6 +30,7 @@ router.on('/categories/:id').render('pages/category').as('category')
 
 // Pages speakers
 router.get('/speakers', [SpeakersController, 'index']).as('speakers')
+router.get('/speakers/new', [SpeakersController, 'create']).as('speakerCreate')
 
 // Pages évènements
 // router.get('/events/:slug', [EventsController, 'show']).as('event')

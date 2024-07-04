@@ -1,0 +1,16 @@
+layout.mail()
+
+@slot('mail')
+
+<form action="" method="post">
+    {{ csrfField() }}
+    <input type="text" name="name">
+    <input type="text" name="speciality">
+    <input type="number" name="exp">
+    <input type="text" name="country">
+    <button type="submit">Créer</button>
+</form>
+
+@endslot
+
+@end
