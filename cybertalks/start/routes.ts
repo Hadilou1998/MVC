@@ -14,7 +14,6 @@ const PagesController = () => import('#controllers/pages_controller')
 const CategoriesController = () => import('#controllers/categories_controller')
 const SpeakersController = () => import('#controllers/speakers_controller')
 
-
 // Pages principales
 router.on('/').render('pages/home').as('home')
 
