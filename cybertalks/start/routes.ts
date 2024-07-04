@@ -1,4 +1,4 @@
-/*
+[] /*
 |--------------------------------------------------------------------------
 | Routes file
 |--------------------------------------------------------------------------
@@ -9,13 +9,22 @@
 import router from '@adonisjs/core/services/router'
 
 // On charge le controlleur
-// const EventsController = () => import('#controllers/events_controller')
+const PagesController = () => import('#controllers/pages_controller')
 const CategoriesController = () => import('#controllers/categories_controller')
 const SpeakersController = () => import('#controllers/speakers_controller')
 
 // Pages principales
 router.on('/').render('pages/home').as('home')
-router.on('/contact').render('pages/contact').as('contact')
+
+// Pages contact
+router.get('/contact', [PagesController, 'contact']).as('contact')
+router.post('/contact', async ({ request, view }) => {
+    const data = await request.all()
+    return view.render('pages/contact', {
+        pageTitle: 'Nous Contacter',
+        data: data,
+    })
+})
 
 // Pages catégories
 router.get('/categories', [CategoriesController, 'index']).as('categories')
