@@ -31,7 +31,8 @@ router.on('/categories/:id').render('pages/category').as('category')
 // Pages speakers
 router.get('/speakers', [SpeakersController, 'index']).as('speakers')
 router.get('/speakers/new', [SpeakersController, 'create']).as('speakerCreate')
-
-// Pages évènements
-// router.get('/events/:slug', [EventsController, 'show']).as('event')
-// router.get('/event/', [EventsController, 'index']).as('events')
+router.post('/speakers/new', async ({ request, response }) => {
+    const data = await request.all()
+    // console.log(data)
+    response.redirect().toRoute('speakerCreate', { 'data': data })
+}).as('speakerCreateForm')
